@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
-
 const WelcomeScreen = () => {
   const router = useRouter();
 
@@ -12,12 +11,19 @@ const WelcomeScreen = () => {
 
   return (
     <View className="flex-1 bg-[#030426] justify-center items-center px-3">
-      {/* <Image
-        source={{ uri: "https://your-logo-url.png" }} 
-        className="w-16 h-16 mb-4"
-      /> */}
-      <Text className="text-lg text-purple-400 font-semibold">LEARNIVERSE</Text>
-      <Text className="text-6xl text-white font-semibold mt-10">Let's Get</Text>
+      <View className="flex-row items-center">
+        <Image
+          source={require("@/src/assets/images/splash.png")}
+          className="w-16 h-16 mr-4 rounded-full"
+        />
+        <Text className="text-lg text-purple-400 font-semibold">
+          LEARNIVERSE
+        </Text>
+      </View>
+
+      <Text className="text-6xl text-white font-semibold mt-10 mb-5">
+        Let's Get
+      </Text>
       <Text className="text-5xl text-purple-400 font-semibold">Started!</Text>
       <TouchableOpacity onPress={handleSignIn} className="w-full mt-5 px-20">
         <LinearGradient
